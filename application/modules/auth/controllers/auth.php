@@ -8,7 +8,7 @@ class Auth extends CI_Controller
 
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('form_validation');
-		$this->load->library('security');
+		//$this->load->library('security');
 		$this->load->library('tank_auth');
 		$this->lang->load('tank_auth');
 	}
@@ -92,7 +92,7 @@ class Auth extends CI_Controller
 					$data['captcha_html'] = $this->_create_captcha();
 				}
 			}
-			$this->load->view('custom_auth/login', $data);
+			$this->load->view('login', $data);
 		}
 	}
 
@@ -283,7 +283,7 @@ class Auth extends CI_Controller
 					foreach ($errors as $k => $v)	$data['errors'][$k] = $this->lang->line($v);
 				}
 			}
-			$this->load->view('custom_auth/forgot_password', $data);
+			$this->load->view('forgot_password', $data);
 		}
 	}
 
